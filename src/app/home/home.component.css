@@ -1,3 +1,37 @@
+/* Arrow buttons for services scroll */
+.services-scroll-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.arrow-btn {
+  background: #23263a;
+  color: #00e0ff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s, color 0.2s;
+}
+.arrow-btn:hover {
+  background: #00e0ff;
+  color: #181c2b;
+}
+/* Ensure horizontal scroll for services */
+.services-scroll-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 .home-container {
   background: linear-gradient(180deg, #181c2b 0%, #1a1e2e 100%);
   color: #fff;
@@ -187,34 +221,102 @@
   font-weight: 600;
   margin-bottom: 32px;
 }
+
 .services-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row;
   gap: 32px;
-  justify-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 16px;
+  scroll-behavior: smooth;
+  cursor: grab;
+  scrollbar-width: none;
+}
+.services-list:active {
+  cursor: grabbing;
+}
+.services-list::-webkit-scrollbar {
+  display: none;
+}
+.services-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .service-item {
+  min-width: 180px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(25, 28, 43, 0.7);
   border-radius: 12px;
   padding: 24px 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.service-img-container {
+  position: relative;
+  width: 300px; /* Adjusted width for larger images */
+  height: 200px; /* Adjusted height for larger images */
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
-.service-item img {
-  width: 120px;
-  height: 80px;
+.service-img-container img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 12px;
   border-radius: 8px;
+  transition: filter 0.3s;
 }
-.service-item span {
+.service-img-container:hover img {
+  opacity: 0.7; /* Reduces opacity of the image on hover */
+  filter: none; /* Removes brightness and blur effects */
+}
+.service-overlay {
+  position: absolute;
+  bottom: 0; /* Positions the text at the bottom of the image */
+  left: 0;
+  width: 100%;
+  height: auto; /* Adjusts height to fit the text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none; /* Removes background */
+  color: #fff; /* Sets text color to white */
+  font-weight: 600;
   font-size: 1rem;
-  font-weight: 500;
+  padding: 8px; /* Adds padding for better spacing */
+  border-radius: 0 0 8px 8px; /* Rounds bottom corners */
+  opacity: 0; /* Hides the text by default */
+  transition: opacity 0.3s ease; /* Adds smooth transition for hover effect */
+}
+.service-overlay span {
+  text-transform: uppercase; /* Ensures text is displayed in uppercase */
+  font-size: 1.2rem; /* Adjusted font size for better visibility */
+}
+.service-img-container:hover .service-overlay {
+  opacity: 1; /* Shows the text when hovering over the image */
+}
+.arrow-btn {
+  background: linear-gradient(135deg, #00e0ff 0%, #181c2b 100%);
   color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow-btn:hover {
+  background: linear-gradient(135deg, #181c2b 0%, #00e0ff 100%);
+  color: #00e0ff;
+  transform: scale(1.1);
 }
 
 .contact-section {
