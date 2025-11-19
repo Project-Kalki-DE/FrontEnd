@@ -1,22 +1,147 @@
 <div class="home-container">
+  <!-- Header -->
   <header class="header">
     <div class="header-content">
-      <img src="assets/images/magicframe.png" alt="Magicframe Logo" class="logo">
+      <img src="assets/images/magicframe.png" alt="Magical Frames Logo" class="logo">
+      <input type="text" class="search-bar" placeholder="suchen">
       <nav>
-        <a href="#">Home</a>
+        <a href="#">Leistungen</a>
+        <a href="#">Über uns</a>
         <a href="#">Kontakt</a>
-        <a href="#">Waren Korb</a>
       </nav>
     </div>
   </header>
 
-  <main class="hero-section">
-// ...existing code...
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h2>Welcome to Our Services</h2>
-      <p>Your one-stop solution for amazing things.</p>
-      <button>Get Started</button>
+      <h1>IHRE VISION,<br>PERFEKT GEDRUCKT</h1>
+      <p>Premium-Druck und professionelle Fotografie in Burgdorf, Deutschland. Hochwertige Ergebnisse für Künstler, Unternehmen und private Kunden.</p>
     </div>
-  </main>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>WER WIR SIND ?</h2>
+    <p>Wir sind ein Studio, das Bilder und besondere Momente in hochwertige, greifbare Werke verwandelt. Unser Angebot umfasst individuelle Drucke wie Acryl-, Leinwand- und Fine-Art-Druck sowie Fotografie für Portraits, Produkte und Markenaufnahmen. Zusätzlich erstellen wir Werbetechnik, Serienkarten und Wandaufkleber – alles aus einer Hand, mit überzeugender Qualität und zuverlässig, aus echter Handwerk.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <h2>WAS WIR ANBIETEN</h2>
+    <div class="services-scroll-container" #servicesScroll>
+      <div class="services-list">
+        <div class="service-item">
+          <div class="service-img-container">
+            <img src="assets/images/service1.png" alt="LEINWANDDRUCK & RAHMUNG">
+            <div class="service-overlay">
+              <span>LEINWANDDRUCK & RAHMUNG</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-img-container">
+            <img src="assets/images/service2.png" alt="VINYLAUFKLEBER">
+            <div class="service-overlay">
+              <span>VINYLAUFKLEBER</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-img-container">
+            <img src="assets/images/service3.png" alt="ACRYLIC GLAS DRUCK">
+            <div class="service-overlay">
+              <span>ACRYLIC GLAS DRUCK</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-img-container">
+            <img src="assets/images/service4.png" alt="KOMPLETTE DRUCKSERVICES">
+            <div class="service-overlay">
+              <span>KOMPLETTE DRUCKSERVICES</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-img-container">
+            <img src="assets/images/service5.png" alt="AUTOAUFKLEBER">
+            <div class="service-overlay">
+              <span>AUTOAUFKLEBER</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-img-container">
+            <img src="assets/images/service6.png" alt="DRUCKDESIGN">
+            <div class="service-overlay">
+              <span>DRUCKDESIGN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-left">
+      <h2>WIR SIND IMMER BEREIT, IHNEN ZU HELFEN UND IHRE FRAGEN ZU BEANTWORTEN.</h2>
+    </div>
+    <div class="contact-right">
+      <form class="contact-form">
+        <label for="name">Vollständiger Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required>
+        <label for="subject">Betreff</label>
+        <input type="text" id="subject" name="subject">
+        <label for="message">Nachricht</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Nachricht senden</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="assets/images/magicframe.png" alt="Magical Frames Logo">
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Leistungen</h4>
+          <ul>
+            <li>Leinwanddruck & Rahmung</li>
+            <li>Vinylaufkleber</li>
+            <li>Acrylic Glas Druck</li>
+            <li>Komplette Druckservices</li>
+            <li>Autoaufkleber</li>
+            <li>Druckdesign</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li>Fotografie</li>
+            <li>Portraits</li>
+            <li>Produkte</li>
+            <li>Markenaufnahmen</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li>Adresse: Burgdorf, Deutschland</li>
+            <li>Telefon: +49 123 456789</li>
+            <li>E-Mail: info&#64;magicalframes.de</li>
+            <li>Social Media</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
 
