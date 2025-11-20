@@ -3,11 +3,19 @@
   <header class="header">
     <div class="header-content">
       <img src="assets/images/magicframe.png" alt="Magical Frames Logo" class="logo">
-      <input type="text" class="search-bar" placeholder="suchen">
+      <input type="text" class="search-bar" placeholder="suchen" i18n-placeholder="@@searchPlaceholder">
       <nav>
-        <a href="#">Leistungen</a>
-        <a href="#">Über uns</a>
-        <a href="#">Kontakt</a>
+        <a href="#" i18n="@@servicesLink">Leistungen</a>
+        <a href="#" i18n="@@aboutUsLink">Über uns</a>
+        <a href="#" i18n="@@contactLink">Kontakt</a>
+        <div class="lang-dropdown">
+          <button (click)="toggleLangDropdown()" class="lang-dropbtn">
+            {{ currentLang }} <span class="arrow">&#9662;</span>
+          </button>
+          <div *ngIf="isLangDropdownOpen" class="lang-dropdown-content">
+            <a *ngFor="let lang of languages" [href]="'/' + lang.code + '/'">{{ lang.name }}</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -16,27 +24,27 @@
   <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>IHRE VISION,<br>PERFEKT GEDRUCKT</h1>
-      <p>Premium-Druck und professionelle Fotografie in Burgdorf, Deutschland. Hochwertige Ergebnisse für Künstler, Unternehmen und private Kunden.</p>
+      <h1 i18n="@@heroTitle">IHRE VISION,<br>PERFEKT GEDRUCKT</h1>
+      <p i18n="@@heroSubtitle">Premium-Druck und professionelle Fotografie in Burgdorf, Deutschland. Hochwertige Ergebnisse für Künstler, Unternehmen und private Kunden.</p>
     </div>
   </section>
 
   <!-- About Section -->
   <section class="about-section">
-    <h2>WER WIR SIND ?</h2>
-    <p>Wir sind ein Studio, das Bilder und besondere Momente in hochwertige, greifbare Werke verwandelt. Unser Angebot umfasst individuelle Drucke wie Acryl-, Leinwand- und Fine-Art-Druck sowie Fotografie für Portraits, Produkte und Markenaufnahmen. Zusätzlich erstellen wir Werbetechnik, Serienkarten und Wandaufkleber – alles aus einer Hand, mit überzeugender Qualität und zuverlässig, aus echter Handwerk.</p>
+    <h2 i18n="@@aboutTitle">WER WIR SIND ?</h2>
+    <p i18n="@@aboutText">Wir sind ein Studio, das Bilder und besondere Momente in hochwertige, greifbare Werke verwandelt. Unser Angebot umfasst individuelle Drucke wie Acryl-, Leinwand- und Fine-Art-Druck sowie Fotografie für Portraits, Produkte und Markenaufnahmen. Zusätzlich erstellen wir Werbetechnik, Serienkarten und Wandaufkleber – alles aus einer Hand, mit überzeugender Qualität und zuverlässig, aus echter Handwerk.</p>
   </section>
 
   <!-- Services Section -->
   <section class="services-section">
-    <h2>WAS WIR ANBIETEN</h2>
+    <h2 i18n="@@servicesTitle">WAS WIR ANBIETEN</h2>
     <div class="services-scroll-container" #servicesScroll>
       <div class="services-list">
         <div class="service-item">
           <div class="service-img-container">
             <img src="assets/images/service1.png" alt="LEINWANDDRUCK & RAHMUNG">
             <div class="service-overlay">
-              <span>LEINWANDDRUCK & RAHMUNG</span>
+              <span i18n="@@serviceCanvas">LEINWANDDRUCK & RAHMUNG</span>
             </div>
           </div>
         </div>
@@ -44,7 +52,7 @@
           <div class="service-img-container">
             <img src="assets/images/service2.png" alt="VINYLAUFKLEBER">
             <div class="service-overlay">
-              <span>VINYLAUFKLEBER</span>
+              <span i18n="@@serviceVinyl">VINYLAUFKLEBER</span>
             </div>
           </div>
         </div>
@@ -52,7 +60,7 @@
           <div class="service-img-container">
             <img src="assets/images/service3.png" alt="ACRYLIC GLAS DRUCK">
             <div class="service-overlay">
-              <span>ACRYLIC GLAS DRUCK</span>
+              <span i18n="@@serviceAcrylic">ACRYLIC GLAS DRUCK</span>
             </div>
           </div>
         </div>
@@ -60,7 +68,7 @@
           <div class="service-img-container">
             <img src="assets/images/service4.png" alt="KOMPLETTE DRUCKSERVICES">
             <div class="service-overlay">
-              <span>KOMPLETTE DRUCKSERVICES</span>
+              <span i18n="@@serviceComplete">KOMPLETTE DRUCKSERVICES</span>
             </div>
           </div>
         </div>
@@ -68,7 +76,7 @@
           <div class="service-img-container">
             <img src="assets/images/service5.png" alt="AUTOAUFKLEBER">
             <div class="service-overlay">
-              <span>AUTOAUFKLEBER</span>
+              <span i18n="@@serviceCar">AUTOAUFKLEBER</span>
             </div>
           </div>
         </div>
@@ -76,7 +84,7 @@
           <div class="service-img-container">
             <img src="assets/images/service6.png" alt="DRUCKDESIGN">
             <div class="service-overlay">
-              <span>DRUCKDESIGN</span>
+              <span i18n="@@serviceDesign">DRUCKDESIGN</span>
             </div>
           </div>
         </div>
@@ -87,19 +95,19 @@
   <!-- Contact Section -->
   <section class="contact-section">
     <div class="contact-left">
-      <h2>WIR SIND IMMER BEREIT, IHNEN ZU HELFEN UND IHRE FRAGEN ZU BEANTWORTEN.</h2>
+      <h2 i18n="@@contactTitle">WIR SIND IMMER BEREIT, IHNEN ZU HELFEN UND IHRE FRAGEN ZU BEANTWORTEN.</h2>
     </div>
     <div class="contact-right">
       <form class="contact-form">
-        <label for="name">Vollständiger Name</label>
+        <label for="name" i18n="@@formName">Vollständiger Name</label>
         <input type="text" id="name" name="name" required>
-        <label for="email">E-Mail</label>
+        <label for="email" i18n="@@formEmail">E-Mail</label>
         <input type="email" id="email" name="email" required>
-        <label for="subject">Betreff</label>
+        <label for="subject" i18n="@@formSubject">Betreff</label>
         <input type="text" id="subject" name="subject">
-        <label for="message">Nachricht</label>
+        <label for="message" i18n="@@formMessage">Nachricht</label>
         <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Nachricht senden</button>
+        <button type="submit" i18n="@@formSubmit">Nachricht senden</button>
       </form>
     </div>
   </section>
@@ -112,32 +120,32 @@
       </div>
       <div class="footer-links">
         <div>
-          <h4>Leistungen</h4>
+          <h4 i18n="@@footerServices">Leistungen</h4>
           <ul>
-            <li>Leinwanddruck & Rahmung</li>
-            <li>Vinylaufkleber</li>
-            <li>Acrylic Glas Druck</li>
-            <li>Komplette Druckservices</li>
-            <li>Autoaufkleber</li>
-            <li>Druckdesign</li>
+            <li i18n="@@footerCanvas">Leinwanddruck & Rahmung</li>
+            <li i18n="@@footerVinyl">Vinylaufkleber</li>
+            <li i18n="@@footerAcrylic">Acrylic Glas Druck</li>
+            <li i18n="@@footerComplete">Komplette Druckservices</li>
+            <li i18n="@@footerCar">Autoaufkleber</li>
+            <li i18n="@@footerDesign">Druckdesign</li>
           </ul>
         </div>
         <div>
-          <h4>Studio</h4>
+          <h4 i18n="@@footerStudio">Studio</h4>
           <ul>
-            <li>Fotografie</li>
-            <li>Portraits</li>
-            <li>Produkte</li>
-            <li>Markenaufnahmen</li>
+            <li i18n="@@footerPhotography">Fotografie</li>
+            <li i18n="@@footerPortraits">Portraits</li>
+            <li i18n="@@footerProducts">Produkte</li>
+            <li i18n="@@footerBranding">Markenaufnahmen</li>
           </ul>
         </div>
         <div>
-          <h4>Kontakt</h4>
+          <h4 i18n="@@footerContact">Kontakt</h4>
           <ul>
-            <li>Adresse: Burgdorf, Deutschland</li>
-            <li>Telefon: +49 123 456789</li>
-            <li>E-Mail: info&#64;magicalframes.de</li>
-            <li>Social Media</li>
+            <li i18n="@@footerAddress">Adresse: Burgdorf, Deutschland</li>
+            <li i18n="@@footerPhone">Telefon: +49 123 456789</li>
+            <li i18n="@@footerEmail">E-Mail: info&#64;magicalframes.de</li>
+            <li i18n="@@footerSocial">Social Media</li>
           </ul>
         </div>
       </div>

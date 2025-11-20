@@ -8,6 +8,7 @@ Welcome to the official documentation for the Magical Frames project. This is a 
 *   **Dynamic Components**: Built with Angular's powerful component-based architecture.
 *   **Containerized**: Fully containerized with Docker and Nginx for consistent and easy deployment.
 *   **Automated E2E Testing**: End-to-end tests written with Playwright to ensure application reliability.
+*   **Internationalization (i18n)**: Built-in support for multiple languages (DE, EN, TR) using Angular's localization framework.
 
 ---
 
@@ -89,6 +90,37 @@ This command will automatically:
 *   Shut down the application server.
 
 Test results and reports are generated in the `test-results/` and `playwright-report/` directories respectively.
+
+---
+
+## 🌍 Internationalization (i18n)
+
+The application is configured with full support for internationalization using Angular's built-in `@angular/localize` package.
+
+### Supported Languages
+
+*   **German (de)**: The default source language.
+*   **English (en)**
+*   **Turkish (tr)**
+
+### How it Works
+
+The application is built into language-specific versions. The Nginx server is configured to serve the correct version based on the URL prefix.
+
+*   `http://localhost:8080/de/` serves the German version.
+*   `http://localhost:8080/en/` serves the English version.
+*   `http://localhost:8080/tr/` serves the Turkish version.
+
+Visiting the root URL (`http://localhost:8080/`) will automatically redirect to the default language, which is currently set to German.
+
+### Adding a New Language
+
+To add a new language (e.g., French `fr`):
+
+1.  **Update `angular.json`**: Add the new locale to the `i18n.locales` object and the `build.configurations.production.localize` array.
+2.  **Create Translation File**: Copy `src/locale/messages.xlf` to `src/locale/messages.fr.xlf` and add the French translations in `<target>` tags.
+3.  **Update Language Switcher**: Add the new language to the `languages` array in `src/app/home/home.component.ts`.
+4.  **Update Nginx**: Add a new `location /fr/ { ... }` block to `nginx.conf`.
 
 ---
 

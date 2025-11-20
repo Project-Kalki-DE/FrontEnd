@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="searchPlaceholder" datatype="html">
+        <source>suchen</source>
+        <target>Search</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servicesLink" datatype="html">
+        <source>Leistungen</source>
+        <target>Services</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aboutUsLink" datatype="html">
+        <source>Über uns</source>
+        <target>About Us</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactLink" datatype="html">
+        <source>Kontakt</source>
+        <target>Contact</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">10,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="heroTitle" datatype="html">
+        <source>IHRE VISION,<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>PERFEKT GEDRUCKT</source>
+        <target>YOUR VISION,<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>PERFECTLY PRINTED</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="heroSubtitle" datatype="html">
+        <source>Premium-Druck und professionelle Fotografie in Burgdorf, Deutschland. Hochwertige Ergebnisse für Künstler, Unternehmen und private Kunden.</source>
+        <target>Premium printing and professional photography in Burgdorf, Germany. High-quality results for artists, companies, and private clients.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aboutTitle" datatype="html">
+        <source>WER WIR SIND ?</source>
+        <target>WHO WE ARE?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aboutText" datatype="html">
+        <source>Wir sind ein Studio, das Bilder und besondere Momente in hochwertige, greifbare Werke verwandelt. Unser Angebot umfasst individuelle Drucke wie Acryl-, Leinwand- und Fine-Art-Druck sowie Fotografie für Portraits, Produkte und Markenaufnahmen. Zusätzlich erstellen wir Werbetechnik, Serienkarten und Wandaufkleber – alles aus einer Hand, mit überzeugender Qualität und zuverlässig, aus echter Handwerk.</source>
+        <target>We are a studio that transforms images and special moments into high-quality, tangible works. Our offerings include custom prints such as acrylic, canvas, and fine art printing, as well as photography for portraits, products, and brand shoots. Additionally, we create advertising materials, series cards, and wall decals—all from a single source, with convincing quality and reliability, from true craftsmanship.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">27,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servicesTitle" datatype="html">
+        <source>WAS WIR ANBIETEN</source>
+        <target>WHAT WE OFFER</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceCanvas" datatype="html">
+        <source>LEINWANDDRUCK &amp; RAHMUNG</source>
+        <target>CANVAS PRINTING &amp; FRAMING</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">39,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceVinyl" datatype="html">
+        <source>VINYLAUFKLEBER</source>
+        <target>VINYL STICKERS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">47,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAcrylic" datatype="html">
+        <source>ACRYLIC GLAS DRUCK</source>
+        <target>ACRYLIC GLASS PRINT</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">55,57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceComplete" datatype="html">
+        <source>KOMPLETTE DRUCKSERVICES</source>
+        <target>COMPLETE PRINTING SERVICES</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">63,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceCar" datatype="html">
+        <source>AUTOAUFKLEBER</source>
+        <target>CAR STICKERS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">71,72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceDesign" datatype="html">
+        <source>DRUCKDESIGN</source>
+        <target>PRINT DESIGN</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">79,81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactTitle" datatype="html">
+        <source>WIR SIND IMMER BEREIT, IHNEN ZU HELFEN UND IHRE FRAGEN ZU BEANTWORTEN.</source>
+        <target>WE ARE ALWAYS READY TO HELP YOU AND ANSWER YOUR QUESTIONS.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">90,92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="formName" datatype="html">
+        <source>Vollständiger Name</source>
+        <target>Full Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">94,95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="formEmail" datatype="html">
+        <source>E-Mail</source>
+        <target>Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">96,97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="formSubject" datatype="html">
+        <source>Betreff</source>
+        <target>Subject</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">98,99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="formMessage" datatype="html">
+        <source>Nachricht</source>
+        <target>Message</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">100,101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="formSubmit" datatype="html">
+        <source>Nachricht senden</source>
+        <target>Send Message</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">102,104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerServices" datatype="html">
+        <source>Leistungen</source>
+        <target>Services</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">115,117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerCanvas" datatype="html">
+        <source>Leinwanddruck &amp; Rahmung</source>
+        <target>Canvas Printing &amp; Framing</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">117,118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerVinyl" datatype="html">
+        <source>Vinylaufkleber</source>
+        <target>Vinyl Stickers</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">118,119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerAcrylic" datatype="html">
+        <source>Acrylic Glas Druck</source>
+        <target>Acrylic Glass Print</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">119,120</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerComplete" datatype="html">
+        <source>Komplette Druckservices</source>
+        <target>Complete Printing Services</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">120,121</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerCar" datatype="html">
+        <source>Autoaufkleber</source>
+        <target>Car Stickers</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">121,122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerDesign" datatype="html">
+        <source>Druckdesign</source>
+        <target>Print Design</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">122,124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerStudio" datatype="html">
+        <source>Studio</source>
+        <target>Studio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">126,128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerPhotography" datatype="html">
+        <source>Fotografie</source>
+        <target>Photography</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">128,129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerPortraits" datatype="html">
+        <source>Portraits</source>
+        <target>Portraits</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">129,130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerProducts" datatype="html">
+        <source>Produkte</source>
+        <target>Products</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">130,131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerBranding" datatype="html">
+        <source>Markenaufnahmen</source>
+        <target>Brand Shoots</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">131,133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerContact" datatype="html">
+        <source>Kontakt</source>
+        <target>Contact</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">135,137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerAddress" datatype="html">
+        <source>Adresse: Burgdorf, Deutschland</source>
+        <target>Address: Burgdorf, Germany</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">137,138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerPhone" datatype="html">
+        <source>Telefon: +49 123 456789</source>
+        <target>Phone: +49 123 456789</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">138,139</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerEmail" datatype="html">
+        <source>E-Mail: info@magicalframes.de</source>
+        <target>Email: info@magicalframes.de</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">139,140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerSocial" datatype="html">
+        <source>Social Media</source>
+        <target>Social Media</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">140,142</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
