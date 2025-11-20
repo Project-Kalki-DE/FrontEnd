@@ -1,68 +1,141 @@
-# RUN LOCALLY THE APP VIA DOCKER
+# Magical Frames - A Modern Angular Showcase
+
+Welcome to the official documentation for the Magical Frames project. This is a modern, single-page application built with Angular, designed to showcase premium printing and professional photography services.
+
+## ✨ Features
+
+*   **Responsive Design**: A clean and modern UI that looks great on all devices.
+*   **Dynamic Components**: Built with Angular's powerful component-based architecture.
+*   **Interactive UI**: Smooth-scrolling navigation and hover effects for an enhanced user experience.
+*   **Containerized**: Fully containerized with Docker and Nginx for consistent and easy deployment.
+*   **Automated E2E Testing**: End-to-end tests written with Playwright to ensure application reliability.
+*   **Internationalization (i18n)**: Built-in support for multiple languages (DE, EN, TR) using Angular's localization framework.
+
+---
+
+## RUN LOCALLY THE APP VIA DOCKER
 
 
 * Install docker dameon in your local machine
 * Run docker-compose up --build in your machine
 * The front end will be served at localhost:8080/
 
+---
 
+## 🛠️ Tech Stack
 
-# FrontEnd
+*   **Frontend**: [Angular](https://angular.dev/)
+*   **Web Server**: [Nginx](https://www.nginx.com/)
+*   **Containerization**: [Docker](https://www.docker.com/) & [Docker Compose](https://docs.docker.com/compose/)
+*   **E2E Testing**: [Playwright](https://playwright.dev/)
+*   **Package Manager**: [npm](https://www.npmjs.com/)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+---
 
-## Development server
+## 🚀 Getting Started
 
-To start a local development server, run:
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+*   [Node.js](https://nodejs.org/) (v18 or later recommended)
+*   [Angular CLI](https://angular.dev/tools/cli)
+*   [Docker](https://www.docker.com/products/docker-desktop/)
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repository-url>
+    cd FrontEnd
+    ```
+
+2.  **Install npm packages:**
+    ```bash
+    npm install
+    ```
+
+---
+
+## 🏃 Running the Application
+
+You can run the application in two ways: using the local Angular development server or using Docker.
+
+### 1. Local Development Server (with Hot-Reload)
+
+This is the recommended method for active development.
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### 2. Docker
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+This method builds and runs the application in a production-like containerized environment. It's great for testing the final build.
 
 ```bash
-ng generate --help
+docker-compose up --build
 ```
 
-## Building
+Navigate to `http://localhost:8080/`.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## ✅ Running Tests
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This project uses Playwright for end-to-end testing. The tests are configured to run against the Dockerized application to ensure they are testing a production-like environment.
 
-## Running unit tests
+1.  **Ensure no other instances are running** on port `8080`.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+2.  **Run the E2E test command:**
+    ```bash
+    npm run e2e
+    ```
 
-```bash
-ng test
-```
+This command will automatically:
+*   Start the application using `docker-compose`.
+*   Run all Playwright tests located in the `/e2e` directory.
+*   Shut down the application server.
 
-## Running end-to-end tests
+Test results and reports are generated in the `test-results/` and `playwright-report/` directories respectively.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## 🌍 Internationalization (i18n)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The application is configured with full support for internationalization using Angular's built-in `@angular/localize` package.
 
-## Additional Resources
+### Supported Languages
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*   **German (de)**: The default source language.
+*   **English (en)**
+*   **Turkish (tr)**
+
+### How it Works
+
+The application is built into language-specific versions. The Nginx server is configured to serve the correct version based on the URL prefix.
+
+*   `http://localhost:8080/de/` serves the German version.
+*   `http://localhost:8080/en/` serves the English version.
+*   `http://localhost:8080/tr/` serves the Turkish version.
+
+Visiting the root URL (`http://localhost:8080/`) will automatically redirect to the default language, which is currently set to German.
+
+### Adding a New Language
+
+To add a new language (e.g., French `fr`):
+
+1.  **Update `angular.json`**: Add the new locale to the `i18n.locales` object and the `build.configurations.production.localize` array.
+2.  **Create Translation File**: Copy `src/locale/messages.xlf` to `src/locale/messages.fr.xlf` and add the French translations in `<target>` tags.
+3.  **Update Language Switcher**: Add the new language to the `languages` array in `src/app/home/home.component.ts`.
+4.  **Update Nginx**: Add a new `location /fr/ { ... }` block to `nginx.conf`.
+
+---
+
+## 🌐 Deployment
+
+This application is configured for easy deployment. The multi-stage `Dockerfile` creates a lightweight, optimized Nginx server to serve the static Angular files.
+
+For **GitHub Pages**, you would typically need to adjust the build process to output to a `/docs` folder or a specific branch (`gh-pages`) and ensure the base-href is set correctly in your Angular build command.
