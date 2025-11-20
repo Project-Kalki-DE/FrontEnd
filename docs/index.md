@@ -64,13 +64,18 @@ Navigate to `http://localhost:4200/`. The app will automatically reload if you c
 
 ### 2. Docker
 
-This method builds and runs the application in a production-like containerized environment. It's great for testing the final build.
+This method builds and runs the application in a production-like containerized environment using Docker. It's the most reliable way to run the app and is great for testing the final build.
 
-```bash
-docker-compose up --build
-```
+1.  **Ensure Docker is running**: Make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and the Docker daemon is running on your local machine.
 
-Navigate to `http://localhost:8080/`.
+2.  **Build and run the container**:
+    ```bash
+    docker-compose up --build
+    ```
+    This command will build the Docker image for the first time and then start the container.
+
+3.  **Access the application**:
+    Navigate to `http://localhost:8080/`. The application will be served by the Nginx server inside the Docker container.
 
 ---
 
