@@ -6,6 +6,7 @@ Welcome to the official documentation for the Magical Frames project. This is a 
 
 *   **Responsive Design**: A clean and modern UI that looks great on all devices.
 *   **Dynamic Components**: Built with Angular's powerful component-based architecture.
+*   **Interactive UI**: Smooth-scrolling navigation and hover effects for an enhanced user experience.
 *   **Containerized**: Fully containerized with Docker and Nginx for consistent and easy deployment.
 *   **Automated E2E Testing**: End-to-end tests written with Playwright to ensure application reliability.
 *   **Internationalization (i18n)**: Built-in support for multiple languages (DE, EN, TR) using Angular's localization framework.
