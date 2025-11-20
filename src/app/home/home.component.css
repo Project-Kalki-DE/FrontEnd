@@ -74,10 +74,13 @@
   font-family: 'Outfit', sans-serif;
   font-weight: 500;
   font-size: 18px;
-  transition: color 0.2s;
+  transition: color 0.2s, transform 0.2s;
+  cursor: pointer;
+  display: inline-block; /* Added for transform to work */
 }
 .header nav a:hover {
   color: #00e0ff;
+  transform: translateY(-2px); /* Raise the link on hover */
 }
 
 .search-bar {

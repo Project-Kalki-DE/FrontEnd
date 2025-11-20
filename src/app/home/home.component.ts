@@ -29,6 +29,10 @@ export class HomeComponent {
     this.isLangDropdownOpen = !this.isLangDropdownOpen;
   }
 
+  scrollTo(section: string) {
+    this.document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   scrollServices(direction: 'left' | 'right') {
     const container = this.servicesScroll?.nativeElement;
     if (container) {

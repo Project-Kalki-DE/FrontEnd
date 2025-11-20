@@ -5,9 +5,9 @@
       <img src="assets/images/magicframe.png" alt="Magical Frames Logo" class="logo">
       <input type="text" class="search-bar" placeholder="suchen" i18n-placeholder="@@searchPlaceholder">
       <nav>
-        <a href="#" i18n="@@servicesLink">Leistungen</a>
-        <a href="#" i18n="@@aboutUsLink">Über uns</a>
-        <a href="#" i18n="@@contactLink">Kontakt</a>
+        <a (click)="scrollTo('services')" i18n="@@servicesLink">Leistungen</a>
+        <a (click)="scrollTo('about')" i18n="@@aboutUsLink">Über uns</a>
+        <a (click)="scrollTo('contact')" i18n="@@contactLink">Kontakt</a>
         <div class="lang-dropdown">
           <button (click)="toggleLangDropdown()" class="lang-dropbtn">
             {{ currentLang }} <span class="arrow">&#9662;</span>
@@ -30,13 +30,13 @@
   </section>
 
   <!-- About Section -->
-  <section class="about-section">
+  <section class="about-section" id="about">
     <h2 i18n="@@aboutTitle">WER WIR SIND ?</h2>
     <p i18n="@@aboutText">Wir sind ein Studio, das Bilder und besondere Momente in hochwertige, greifbare Werke verwandelt. Unser Angebot umfasst individuelle Drucke wie Acryl-, Leinwand- und Fine-Art-Druck sowie Fotografie für Portraits, Produkte und Markenaufnahmen. Zusätzlich erstellen wir Werbetechnik, Serienkarten und Wandaufkleber – alles aus einer Hand, mit überzeugender Qualität und zuverlässig, aus echter Handwerk.</p>
   </section>
 
   <!-- Services Section -->
-  <section class="services-section">
+  <section class="services-section" id="services">
     <h2 i18n="@@servicesTitle">WAS WIR ANBIETEN</h2>
     <div class="services-scroll-container" #servicesScroll>
       <div class="services-list">
@@ -93,7 +93,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="contact-section">
+  <section class="contact-section" id="contact">
     <div class="contact-left">
       <h2 i18n="@@contactTitle">WIR SIND IMMER BEREIT, IHNEN ZU HELFEN UND IHRE FRAGEN ZU BEANTWORTEN.</h2>
     </div>
