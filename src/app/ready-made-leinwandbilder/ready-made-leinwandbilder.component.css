@@ -507,7 +507,25 @@
   color: #c8d0e0;
 }
 
-/* ─── 1280px: wide desktop ─── */
+.footer-social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.footer-social-icons a {
+  color: #c8d0e0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.footer-social-icons a:hover {
+  color: #ffffff;
+}
 @media (max-width: 1280px) {
   .ac-container {
     padding: 120px 40px 96px;

@@ -89,10 +89,17 @@ const server = http.createServer((req, res) => {
   serveFile(filePath, res);
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
+  const os = require('os');
+  const lanIp = Object.values(os.networkInterfaces())
+    .flat()
+    .find(i => i.family === 'IPv4' && !i.internal)?.address || 'YOUR_LAN_IP';
+
   console.log('\n✓ All locales running at http://localhost:' + PORT);
   console.log('  DE (default): http://localhost:' + PORT + '/de/');
   console.log('  EN:           http://localhost:' + PORT + '/en/');
   console.log('  TR:           http://localhost:' + PORT + '/tr/');
+  console.log('\n📱 On your phone (same Wi-Fi):');
+  console.log('  http://' + lanIp + ':' + PORT + '/de/');
   console.log('\nLanguage switcher works fully here.\n');
 });

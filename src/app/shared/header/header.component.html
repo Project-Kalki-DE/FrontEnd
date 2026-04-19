@@ -3,7 +3,22 @@
     <a routerLink="/" class="logo-link">
       <img src="assets/images/magicframe.png" alt="Magical Frames" class="logo">
     </a>
-    <input type="text" class="search-bar" placeholder="suchen">
+    <div class="search-wrapper">
+      <input
+        type="text"
+        class="search-bar"
+        placeholder="suchen"
+        autocomplete="off"
+        [(ngModel)]="searchQuery"
+        (input)="onSearchInput()"
+        (keydown)="onSearchKeydown($event)">
+      <ul class="search-results" *ngIf="isSearchOpen && searchResults.length">
+        <li *ngFor="let item of searchResults" (click)="onSearchSelect(item)">
+          {{ item.label }}
+          <span class="result-sub">{{ item.sublabel }}</span>
+        </li>
+      </ul>
+    </div>
     <button
       class="hamburger-btn"
       (click)="toggleMobileMenu()"

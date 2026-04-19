@@ -85,15 +85,61 @@
   transform: translateY(-2px); /* Raise the link on hover */
 }
 
-.search-bar {
+.search-wrapper {
+  position: relative;
   margin: 0 24px;
+}
+
+.search-bar {
+  display: block;
+  width: 180px;
   padding: 8px 16px;
   border-radius: 4px;
   border: none;
   font-size: 16px;
   background: #23263a;
   color: #fff;
-  width: 180px;
+  outline: none;
+  font-family: 'Outfit', sans-serif;
+}
+
+.search-bar::placeholder {
+  color: rgba(255,255,255,0.55);
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 260px;
+  background: #23263a;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  z-index: 600;
+}
+
+.search-results li {
+  padding: 10px 16px;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.search-results li:hover {
+  background: rgba(0, 224, 255, 0.12);
+  color: #00e0ff;
+}
+
+.result-sub {
+  display: block;
+  font-size: 12px;
+  opacity: 0.5;
+  margin-top: 2px;
 }
 
 
@@ -483,6 +529,26 @@
   color: #e0e0e0;
 }
 
+.footer-social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.footer-social-icons a {
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.footer-social-icons a:hover {
+  color: #ffffff;
+}
+
 .language-switcher {
   margin-left: 20px;
 }
@@ -649,7 +715,7 @@
     margin: 0 10px;
     font-size: 15px;
   }
-  .search-bar {
+  .search-wrapper {
     width: 120px;
     margin: 0 12px;
   }
@@ -691,13 +757,26 @@
   }
   .header-content {
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 0;
+    align-items: center;
   }
   .logo {
-    width: 130px;
+    width: 110px;
+    flex-shrink: 0;
+  }
+  .search-wrapper {
+    flex: 1;
+    min-width: 0;
+    max-width: 150px;
+    margin: 0 10px;
+    order: unset;
   }
   .search-bar {
-    display: none;
+    width: 100%;
+  }
+  .search-results {
+    width: 260px;
+    min-width: unset;
   }
   .hamburger-btn {
     display: flex;
@@ -705,6 +784,7 @@
   }
   .header nav {
     display: none;
+    order: 4;
     width: 100%;
     flex-direction: column;
     background: #181c2b;

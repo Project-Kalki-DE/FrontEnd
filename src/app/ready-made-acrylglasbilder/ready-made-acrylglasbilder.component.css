@@ -14,15 +14,15 @@
 /* Circular main image — unwrap the overflow:hidden container */
 .ac-main-img-wrap.ac-main-img-wrap-round {
   background: transparent;
-  overflow: visible;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .ac-main-img.ac-main-img-round {
-  width: 290px !important;
-  height: 290px !important;
-  max-width: 290px;
+  width: clamp(150px, 40vw, 290px) !important;
+  height: clamp(150px, 40vw, 290px) !important;
+  max-width: 100%;
   border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1 / 1;
@@ -239,6 +239,10 @@
   height: 290px;
   display: block;
   object-fit: cover;
+}
+
+.ac-wall-img {
+  object-position: top center;
 }
 
 .ac-arrow {
@@ -552,7 +556,25 @@
   color: #c8d0e0;
 }
 
-/* ─── 1280px: wide desktop ─── */
+.footer-social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.footer-social-icons a {
+  color: #c8d0e0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.footer-social-icons a:hover {
+  color: #ffffff;
+}
 @media (max-width: 1280px) {
   .ac-container {
     padding: 120px 40px 96px;
@@ -665,6 +687,15 @@
   .ac-wall-img {
     height: 200px;
   }
+  .ac-main-img-wrap.ac-main-img-wrap-round {
+    height: 200px;
+    justify-content: center;
+  }
+  .ac-main-img.ac-main-img-round {
+    width: 180px !important;
+    height: 180px !important;
+    max-width: 180px;
+  }
   .ac-product-display {
     margin-bottom: 56px;
   }
@@ -738,6 +769,14 @@
   .ac-main-img,
   .ac-wall-img {
     height: 170px;
+  }
+  .ac-main-img-wrap.ac-main-img-wrap-round {
+    height: 170px;
+  }
+  .ac-main-img.ac-main-img-round {
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px;
   }
   .ac-product-display {
     margin-bottom: 44px;
