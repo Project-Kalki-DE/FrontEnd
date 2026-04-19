@@ -193,7 +193,7 @@
 }
 
 .wk-order-btn {
-  background: #111;
+  background: #1c1e56;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -209,7 +209,7 @@
 }
 
 .wk-order-btn:hover:not(:disabled) {
-  background: #333;
+  background: #151741;
 }
 
 .wk-order-btn:disabled {
@@ -222,7 +222,7 @@
   display: inline-block;
   margin-top: 20px;
   padding: 12px 28px;
-  background: #111;
+  background: #1c1e56;
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
@@ -233,7 +233,7 @@
 }
 
 .wk-btn-back:hover {
-  background: #333;
+  background: #151741;
 }
 
 /* Success state */
