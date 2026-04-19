@@ -28,7 +28,7 @@
             <div
               *ngFor="let d of loopedDesigns"
               class="ac-design-thumb"
-              [class.active]="selectedDesign?.id === d.id"
+              [class.active]="selectedDesign.id === d.id"
               (click)="selectDesign(d)"
             >
               <img [src]="d.thumb" [alt]="d.name">
@@ -44,7 +44,7 @@
         <button
           *ngFor="let d of designs"
           class="ac-dot"
-          [class.active]="selectedDesign?.id === d.id"
+          [class.active]="selectedDesign.id === d.id"
           (click)="selectDesign(d)"
         ></button>
       </div>
