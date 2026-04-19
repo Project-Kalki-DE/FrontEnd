@@ -3,6 +3,9 @@ version: '3.8'
 services:
   backend:
     build: ../BackendService
+    container_name: backend_api
+    # Copy ../BackendService/.env to BackendService/.env before running.
+    # Never commit .env to source control.
     env_file:
       - ../BackendService/.env
     environment:
@@ -12,14 +15,21 @@ services:
     restart: unless-stopped
     networks:
       - app-network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
   frontend:
     build: .
+    container_name: frontend_app
     ports:
       - "80:80"
-    container_name: frontend_app
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     restart: unless-stopped
     networks:
       - app-network
