@@ -1,0 +1,9 @@
+{
+  "outputDirectory": "dist/front-end/browser",
+  "rewrites": [
+    { "source": "/", "destination": "/de/index.html" },
+    { "source": "/de/(.*)", "destination": "/de/index.html" },
+    { "source": "/en/(.*)", "destination": "/en/index.html" },
+    { "source": "/tr/(.*)", "destination": "/tr/index.html" }
+  ]
+}
