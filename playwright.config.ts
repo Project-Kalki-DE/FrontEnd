@@ -10,6 +10,6 @@ export default defineConfig({
   webServer: {
     command: 'docker-compose up',
     url: 'http://localhost:8080',
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: !process.env['CI'],
   },
 });
