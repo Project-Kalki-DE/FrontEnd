@@ -2,16 +2,22 @@
 
 > Angular 19 SPA for the **Magical Frames** premium print studio. Customers can browse canvas (Leinwandbilder) and acrylic glass (Acrylglasbilder) art prints, configure formats and accessories, build a cart, and place orders. Fully internationalised in German, English, and Turkish.
 
+**Live:** https://front-end-rosy-theta.vercel.app  
+**Backend API:** https://magical-frames-api-mqzb.onrender.com
+
 ---
 
 ## Table of Contents
 
 - [Tech Stack](#tech-stack)
 - [Pages & Routes](#pages--routes)
+- [Shared Header](#shared-header)
+- [Search Bar](#search-bar)
 - [API Integration](#api-integration)
 - [Internationalisation](#internationalisation)
 - [Getting Started](#getting-started)
 - [Running the App](#running-the-app)
+- [LAN / Mobile Testing](#lan--mobile-testing)
 - [Testing](#testing)
 - [Docker](#docker)
 - [Deployment](#deployment)
@@ -48,6 +54,32 @@
 
 ---
 
+## Shared Header
+
+`src/app/shared/header/` is used by the Leinwandbilder, Acrylglasbilder, and Warenkorb pages. The **Home page** has its own inline header component because its design differs (hero overlay, language switcher placement).
+
+Both headers include:
+- Logo + navigation links
+- Language switcher dropdown (DE / EN / TR)
+- Cart icon with live item count badge
+- Search bar (see below)
+
+---
+
+## Search Bar
+
+A live search is built into both the shared header and the home page header.
+
+- Searches across 8 items: Home, Über uns, Leistungen, Kontakt, Acrylglasbilder, Leinwandbilder, Vinyl Sticker, Warenkorb
+- Filters by label and sublabel as the user types
+- Keyboard navigation: `ArrowUp` / `ArrowDown` to move through results, `Enter` to select, `Escape` to close
+- Clicking outside the search wrapper closes the dropdown
+- Selecting a result navigates via `Router.navigate()` — anchor-based items (e.g. Über uns, Kontakt) also call `scrollIntoView` after navigation
+
+**Mobile layout:** On screens ≤ 768 px the search wrapper sits inline with the logo and hamburger menu (same row), and the nav links wrap to a second row below.
+
+---
+
 ## API Integration
 
 The app talks to the backend via two endpoints. The base URL is set per environment:
@@ -55,7 +87,7 @@ The app talks to the backend via two endpoints. The base URL is set per environm
 | Environment | `apiUrl` |
 |---|---|
 | Development | `''` (relative, proxied via `serve-all.js` → `localhost:3000`) |
-| Production | `https://YOUR_BACKEND_URL` (set in `src/environments/environment.prod.ts`) |
+| Production | `https://magical-frames-api-mqzb.onrender.com` (set in `src/environments/environment.prod.ts`) |
 
 ### `POST /api/contact`
 
@@ -135,6 +167,8 @@ cd FrontEnd
 npm install
 ```
 
+> `.npmrc` sets `legacy-peer-deps=true` to resolve Angular 19 peer dependency conflicts.
+
 ---
 
 ## Running the App
@@ -149,18 +183,31 @@ npm start
 ### All locales locally (build first, then serve)
 
 ```bash
-npm run start:all
+npm run build
+node serve-all.js
 # → http://localhost:4200/de/   http://localhost:4200/en/   http://localhost:4200/tr/
 ```
 
-The `serve-all.js` script proxies `/api/*` to `localhost:3000` (backend must be running).
+`serve-all.js` proxies `/api/*` requests to `localhost:3000` (backend must be running separately). It binds to `0.0.0.0` so the app is reachable on your local network (see LAN / Mobile Testing below).
 
 ### Production build
 
 ```bash
 npm run build
-# Output: dist/front-end/browser/
+# Output: dist/front-end/browser/{de,en,tr}/
 ```
+
+---
+
+## LAN / Mobile Testing
+
+`serve-all.js` listens on `0.0.0.0:4200`, making the built app accessible from any device on the same Wi-Fi network. When started it prints the LAN URL automatically, e.g.:
+
+```
+LAN:   http://192.168.0.62:4200/de/
+```
+
+Open that URL on a phone or tablet to test mobile layouts without a separate deploy.
 
 ---
 
@@ -211,14 +258,19 @@ Nginx handles:
 
 ## Deployment
 
-> Target: **Vercel** (see project wiki for full deploy guide)
+### Frontend — Vercel
 
-The Angular build output (`dist/front-end/browser/`) is a set of static files and can be deployed to any static host. For Vercel:
+Deployed at: **https://front-end-rosy-theta.vercel.app**
 
-- Set build command: `npm run build`
-- Set output directory: `dist/front-end/browser/de` (or configure rewrites per locale)
-- Set environment variable: `BACKEND_URL` → your Render backend URL
-- Add `vercel.json` rewrites to proxy `/api/*` to the backend
+- Build command: `npm run build`
+- Output directory: `dist/front-end/browser`
+- `vercel.json` rewrites handle locale routing (`/de/`, `/en/`, `/tr/`) and proxy `/api/*` to the Render backend
+
+### Backend — Render
+
+API live at: **https://magical-frames-api-mqzb.onrender.com**
+
+See the [BackendService README](../BackendService/README.md) for full backend setup, environment variables, and rate limiting details.
 
 ---
 
@@ -230,24 +282,26 @@ src/
 │   ├── app.component.ts                Root component
 │   ├── app.config.ts                   Angular bootstrap config
 │   ├── app.routes.ts                   Route definitions
-│   ├── home/                           Landing page
+│   ├── home/                           Landing page (inline header + search)
 │   ├── ready-made-leinwandbilder/      Canvas art catalog
-│   ├── ready-made-acrylglasbilder/     Acrylic glass catalog
+│   ├── ready-made-acrylglasbilder/     Acrylic glass catalog (incl. round format images)
 │   ├── vinyl-sticker/                  Sticker page (stub)
 │   ├── warenkorb/                      Cart & checkout
 │   ├── services/
 │   │   └── cart.service.ts             Cart state (localStorage)
 │   └── shared/
-│       └── header/                     Nav, language switcher, cart count
+│       └── header/                     Shared nav header (search, lang switcher, cart badge)
 ├── environments/
 │   ├── environment.ts                  Dev config (apiUrl: '')
-│   └── environment.prod.ts             Prod config (apiUrl: backend URL)
+│   └── environment.prod.ts             Prod config (apiUrl: Render backend URL)
 ├── locale/
+│   ├── messages.xlf                    Source strings (German)
 │   ├── messages.en.xlf                 English translations
 │   └── messages.tr.xlf                 Turkish translations
-├── assets/                             Static images, fonts
+├── assets/
+│   └── images/                         Product and UI images
 └── styles.css                          Global styles
-nginx.conf                              Nginx config (i18n routing, API proxy)
-serve-all.js                            Local multi-locale dev server
+nginx.conf                              Nginx config (i18n routing, API proxy, security headers)
+serve-all.js                            Local multi-locale dev server (LAN-accessible, 0.0.0.0)
 docker-compose.yml                      Orchestrates frontend + backend
 ```
