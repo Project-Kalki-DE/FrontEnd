@@ -1,0 +1,86 @@
+<app-shared-header [navLinks]="headerNav"></app-shared-header>
+
+<div class="wk-page">
+  <div class="wk-container">
+
+    <!-- Success State -->
+    <div *ngIf="orderId" class="wk-success">
+      <div class="wk-success-icon">✓</div>
+      <h2 i18n="@@wk_success_heading">Bestellung erfolgreich!</h2>
+      <p><span i18n="@@wk_success_ordernr">Ihre Bestellnummer:</span> <strong>{{ orderId }}</strong></p>
+      <p i18n="@@wk_success_email">Sie erhalten eine Bestätigung per E-Mail.</p>
+      <a routerLink="/" class="wk-btn-back" i18n="@@wk_back">Zurück zur Startseite</a>
+    </div>
+
+    <!-- Cart Content -->
+    <ng-container *ngIf="!orderId">
+
+      <div class="wk-title-block">
+        <h1 i18n="@@wk_title">Warenkorb</h1>
+        <p class="wk-subtitle" i18n="@@wk_subtitle">Ihre ausgewählten Artikel</p>
+      </div>
+
+      <!-- Empty cart -->
+      <div *ngIf="items.length === 0" class="wk-empty">
+        <p i18n="@@wk_empty">Ihr Warenkorb ist leer.</p>
+        <a routerLink="/" class="wk-btn-back" i18n="@@wk_back">Zurück zur Startseite</a>
+      </div>
+
+      <!-- Items list -->
+      <div *ngIf="items.length > 0">
+        <div class="wk-items">
+          <div class="wk-item" *ngFor="let item of items">
+            <img
+              [src]="item.thumb"
+              [alt]="getDesignLabel(item)"
+              class="wk-item-thumb"
+              [class.wk-item-thumb-round]="item.shape === 'round'"
+            />
+            <div class="wk-item-info">
+              <div class="wk-item-type-badge wk-item-type-{{ item.productType }}">{{ getProductTypeLabel(item.productType) }}</div>
+              <div class="wk-item-name">{{ getDesignLabel(item) }}</div>
+              <div class="wk-item-meta"><span i18n="@@wk_format">Format:</span> {{ item.formatLabel }}</div>
+              <div class="wk-item-meta" *ngIf="item.rahmen"><span i18n="@@wk_rahmen">Rahmen:</span> {{ getRahmenLabel(item.rahmen) }}</div>
+              <div class="wk-item-meta" *ngIf="item.zubehor && item.zubehor !== 'none'"><span i18n="@@wk_zubehor">Zubehör:</span> {{ getZubehorLabel(item) }}</div>
+              <div class="wk-item-meta"><span i18n="@@wk_menge">Menge:</span> {{ item.menge }}</div>
+            </div>
+            <div class="wk-item-price">{{ item.price }}</div>
+            <button class="wk-remove-btn" (click)="removeItem(item.id)"
+              aria-label="Entfernen" i18n-aria-label="@@wk_remove_aria">✕</button>
+          </div>
+        </div>
+
+        <div class="wk-summary">
+          <div class="wk-subtotal">
+            <span i18n="@@wk_subtotal">Zwischensumme</span>
+            <span>{{ subtotal }}</span>
+          </div>
+          <p class="wk-tax-note" i18n="@@wk_tax">+ zzgl. 19 % MwSt. und Versand</p>
+        </div>
+
+        <!-- Order form -->
+        <div class="wk-order-form">
+          <label class="wk-label" for="wk-email" i18n="@@wk_email_label">E-Mail-Adresse *</label>
+          <input
+            id="wk-email"
+            type="email"
+            class="wk-input"
+            placeholder="ihre@email.de"
+            i18n-placeholder="@@wk_email_placeholder"
+            [(ngModel)]="customerEmail"
+          />
+          <p *ngIf="errorMsg" class="wk-error">{{ errorMsg }}</p>
+          <button
+            class="wk-order-btn"
+            (click)="placeOrder()"
+            [disabled]="isLoading"
+          >
+            <span *ngIf="!isLoading" i18n="@@wk_order_btn">JETZT BESTELLEN</span>
+            <span *ngIf="isLoading" i18n="@@wk_loading">Wird gesendet…</span>
+          </button>
+        </div>
+      </div>
+
+    </ng-container>
+  </div>
+</div>

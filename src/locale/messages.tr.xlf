@@ -170,6 +170,34 @@
           <context context-type="linenumber">102,104</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="formEmailError" datatype="html">
+        <source>Bitte geben Sie eine gültige E-Mail-Adresse ein.</source>
+        <target>Lütfen geçerli bir e-posta adresi girin.</target>
+      </trans-unit>
+      <trans-unit id="formNameError" datatype="html">
+        <source>Bitte geben Sie Ihren Namen ein.</source>
+        <target>Lütfen adınızı girin.</target>
+      </trans-unit>
+      <trans-unit id="formMessageError" datatype="html">
+        <source>Bitte geben Sie eine Nachricht ein.</source>
+        <target>Lütfen bir mesaj girin.</target>
+      </trans-unit>
+      <trans-unit id="formSendError" datatype="html">
+        <source>Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.</source>
+        <target>Bir hata oluştu. Lütfen daha sonra tekrar deneyin.</target>
+      </trans-unit>
+      <trans-unit id="formSuccess" datatype="html">
+        <source>Vielen Dank! Ihre Nachricht wurde gesendet.</source>
+        <target>Teşekkürler! Mesajınız gönderildi.</target>
+      </trans-unit>
+      <trans-unit id="wk_error_email_required" datatype="html">
+        <source>Bitte geben Sie Ihre E-Mail-Adresse ein.</source>
+        <target>Lütfen e-posta adresinizi girin.</target>
+      </trans-unit>
+      <trans-unit id="wk_error_email_invalid" datatype="html">
+        <source>Bitte geben Sie eine gültige E-Mail-Adresse ein.</source>
+        <target>Lütfen geçerli bir e-posta adresi girin.</target>
+      </trans-unit>
       <trans-unit id="footerServices" datatype="html">
         <source>Leistungen</source>
         <target>Hizmetler</target>
@@ -305,6 +333,258 @@
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">140,142</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="getInTouch" datatype="html">
+        <source>GET IN TOUCH</source>
+        <target>İLETİŞİME GEÇİN</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerTagline" datatype="html">
+        <source>Momente, die wir für Sie drucken.</source>
+        <target>Sizin için baskı yaptığımız anlar.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="featuredLimited" datatype="html">
+        <source>LIMITIERTE PRINTS</source>
+        <target>SINIRLI BASKI</target>
+      </trans-unit>
+      <trans-unit id="featuredAcrylic" datatype="html">
+        <source>Acrylic Glass druck</source>
+        <target>Akrilik Cam Baskı</target>
+      </trans-unit>
+      <trans-unit id="featuredNavLeinwand" datatype="html">
+        <source>🖼️ Ready-Made Leinwandbilder</source>
+        <target>Tuval Tablolar</target>
+      </trans-unit>
+      <trans-unit id="featuredNavAcryl" datatype="html">
+        <source>✨ Ready-Made Acrylglasbilder</source>
+        <target>Akrilik Cam Baskılar</target>
+      </trans-unit>
+      <trans-unit id="leinwand_back" datatype="html">
+        <source>Zurück</source>
+        <target>Geri</target>
+      </trans-unit>
+      <trans-unit id="leinwand_pageTitle" datatype="html">
+        <source>READY-MADE LEINWANDBILDER</source>
+        <target>HAZIR TUVAL TABLOLAR</target>
+      </trans-unit>
+      <trans-unit id="leinwand_subtitle" datatype="html">
+        <source>Zeitlose Motive, hochwertig auf Leinwand gedruckt. Wählen Sie Ihr bevorzugtes Design und Format – fertig zum Aufhängen, gemacht, um stilvoll hervorzustechen.</source>
+        <target>Zamansız motifler, yüksek kalitede tuval baskı. Tercih ettiğiniz deseni ve formatı seçin – asmaya hazır, şıkça öne çıkmak için yapıldı.</target>
+      </trans-unit>
+      <trans-unit id="leinwand_chooseDesign" datatype="html">
+        <source>WÄHLEN SIE IHR DESIGN</source>
+        <target>DESENİNİZİ SEÇİN</target>
+      </trans-unit>
+      <trans-unit id="leinwand_configTitle" datatype="html">
+        <source>PRODUKT KONFIGURIEREN</source>
+        <target>ÜRÜNÜ YAPILANDIR</target>
+      </trans-unit>
+      <trans-unit id="leinwand_zubehorLabel" datatype="html">
+        <source>ZUBEHÖR HINZUFÜGEN</source>
+        <target>AKSESUAR EKLE</target>
+      </trans-unit>
+      <trans-unit id="leinwand_formatLabel" datatype="html">
+        <source>FORMAT AUSWÄHLEN</source>
+        <target>FORMAT SEÇ</target>
+      </trans-unit>
+      <trans-unit id="leinwand_rahmenLabel" datatype="html">
+        <source>RAHMENSTÄRKE AUSWÄHLEN</source>
+        <target>ÇERÇEVE KALINLIĞI SEÇ</target>
+      </trans-unit>
+      <trans-unit id="leinwand_mengeLabel" datatype="html">
+        <source>MENGE FESTLEGEN</source>
+        <target>MİKTAR BELİRLE</target>
+      </trans-unit>
+      <trans-unit id="leinwand_wallView" datatype="html">
+        <source>Wandansicht</source>
+        <target>Duvar Görünümü</target>
+      </trans-unit>
+      <trans-unit id="leinwand_zubehor" datatype="html">
+        <source>Zubehör</source>
+        <target>Aksesuar</target>
+      </trans-unit>
+      <trans-unit id="leinwand_rahmen" datatype="html">
+        <source>Rahmenstärke</source>
+        <target>Çerçeve Kalınlığı</target>
+      </trans-unit>
+      <trans-unit id="leinwand_format" datatype="html">
+        <source>Format</source>
+        <target>Format</target>
+      </trans-unit>
+      <trans-unit id="leinwand_menge" datatype="html">
+        <source>Menge</source>
+        <target>Miktar</target>
+      </trans-unit>
+      <trans-unit id="leinwand_order" datatype="html">
+        <source>IN DEN WARENKORB</source>
+        <target>SEPETE EKLE</target>
+      </trans-unit>
+      <trans-unit id="acryl_back" datatype="html">
+        <source>Zurück</source>
+        <target>Geri</target>
+      </trans-unit>
+      <trans-unit id="acryl_pageTitle" datatype="html">
+        <source>READY-MADE ACRYLGLASBILDER</source>
+        <target>HAZIR AKRİLİK CAM TABLOLAR</target>
+      </trans-unit>
+      <trans-unit id="acryl_wallView" datatype="html">
+        <source>Wandansicht</source>
+        <target>Duvar Görünümü</target>
+      </trans-unit>
+      <trans-unit id="acryl_zubehor" datatype="html">
+        <source>Zubehör</source>
+        <target>Aksesuar</target>
+      </trans-unit>
+      <trans-unit id="acryl_format" datatype="html">
+        <source>Format</source>
+        <target>Format</target>
+      </trans-unit>
+      <trans-unit id="acryl_menge" datatype="html">
+        <source>Menge</source>
+        <target>Miktar</target>
+      </trans-unit>
+      <trans-unit id="acryl_order" datatype="html">
+        <source>IN DEN WARENKORB</source>
+        <target>SEPETE EKLE</target>
+      </trans-unit>
+      <trans-unit id="acryl_subtitle" datatype="html">
+        <source>Zeitlose Motive, gefertigt auf hochwertigem Acrylglas. Wählen Sie Ihr bevorzugtes Design und Format – fertig zum Aufhängen, gemacht, um stilvoll hervorzustechen.</source>
+        <target>Zamansız motifler, yüksek kaliteli akrilik cam üzerine üretilmiş. Tercih ettiğiniz tasarımı ve formatı seçin – asmaya hazır, şıkça öne çıkmak için yapıldı.</target>
+      </trans-unit>
+      <trans-unit id="acryl_designTitle" datatype="html">
+        <source>WÄHLEN SIE IHR DESIGN</source>
+        <target>TASARIMINIZI SEÇİN</target>
+      </trans-unit>
+      <trans-unit id="acryl_configTitle" datatype="html">
+        <source>PRODUKT KONFIGURIEREN</source>
+        <target>ÜRÜNÜ YAPILANDIR</target>
+      </trans-unit>
+      <trans-unit id="acryl_zubehorLabel" datatype="html">
+        <source>ZUBEHÖR HINZUFÜGEN</source>
+        <target>AKSESUAR EKLE</target>
+      </trans-unit>
+      <trans-unit id="acryl_none" datatype="html">
+        <source>None</source>
+        <target>Yok</target>
+      </trans-unit>
+      <trans-unit id="acryl_staerkeLabel" datatype="html">
+        <source>ACRYLGLASSTÄRKE</source>
+        <target>AKRİLİK CAM KALINLIĞI</target>
+      </trans-unit>
+      <trans-unit id="acryl_mengeLabel" datatype="html">
+        <source>MENGE FESTLEGEN</source>
+        <target>MİKTARI BELİRLE</target>
+      </trans-unit>
+      <trans-unit id="acryl_formatLabel" datatype="html">
+        <source>FORMAT AUSWÄHLEN</source>
+        <target>FORMAT SEÇ</target>
+      </trans-unit>
+      <trans-unit id="wk_title" datatype="html">
+        <source>Warenkorb</source>
+        <target>Sepet</target>
+      </trans-unit>
+      <trans-unit id="wk_subtitle" datatype="html">
+        <source>Ihre ausgewählten Artikel</source>
+        <target>Seçilen ürünleriniz</target>
+      </trans-unit>
+      <trans-unit id="wk_success_heading" datatype="html">
+        <source>Bestellung erfolgreich!</source>
+        <target>Sipariş başarılı!</target>
+      </trans-unit>
+      <trans-unit id="wk_success_ordernr" datatype="html">
+        <source>Ihre Bestellnummer:</source>
+        <target>Sipariş numaranız:</target>
+      </trans-unit>
+      <trans-unit id="wk_success_email" datatype="html">
+        <source>Sie erhalten eine Bestätigung per E-Mail.</source>
+        <target>E-posta ile onay alacaksınız.</target>
+      </trans-unit>
+      <trans-unit id="wk_back" datatype="html">
+        <source>Zurück zur Startseite</source>
+        <target>Ana Sayfaya Dön</target>
+      </trans-unit>
+      <trans-unit id="wk_empty" datatype="html">
+        <source>Ihr Warenkorb ist leer.</source>
+        <target>Sepetiniz boş.</target>
+      </trans-unit>
+      <trans-unit id="wk_format" datatype="html">
+        <source>Format:</source>
+        <target>Format:</target>
+      </trans-unit>
+      <trans-unit id="wk_rahmen" datatype="html">
+        <source>Rahmen:</source>
+        <target>Çerçeve:</target>
+      </trans-unit>
+      <trans-unit id="wk_zubehor" datatype="html">
+        <source>Zubehör:</source>
+        <target>Aksesuar:</target>
+      </trans-unit>
+      <trans-unit id="wk_menge" datatype="html">
+        <source>Menge:</source>
+        <target>Miktar:</target>
+      </trans-unit>
+      <trans-unit id="wk_subtotal" datatype="html">
+        <source>Zwischensumme</source>
+        <target>Ara Toplam</target>
+      </trans-unit>
+      <trans-unit id="wk_tax" datatype="html">
+        <source>+ zzgl. 19 % MwSt. und Versand</source>
+        <target>+ KDV %19 ve kargo hariç</target>
+      </trans-unit>
+      <trans-unit id="wk_email_label" datatype="html">
+        <source>E-Mail-Adresse *</source>
+        <target>E-posta adresi *</target>
+      </trans-unit>
+      <trans-unit id="wk_email_placeholder" datatype="html">
+        <source>ihre@email.de</source>
+        <target>sizin@email.com</target>
+      </trans-unit>
+      <trans-unit id="wk_order_btn" datatype="html">
+        <source>JETZT BESTELLEN</source>
+        <target>SİPARİŞ VER</target>
+      </trans-unit>
+      <trans-unit id="wk_loading" datatype="html">
+        <source>Wird gesendet…</source>
+        <target>Gönderiliyor…</target>
+      </trans-unit>
+      <trans-unit id="wk_remove_aria" datatype="html">
+        <source>Entfernen</source>
+        <target>Kaldır</target>
+      </trans-unit>
+      <trans-unit id="wk_type_acryl" datatype="html">
+        <source>Acrylglas</source>
+        <target>Akrilik Cam</target>
+      </trans-unit>
+      <trans-unit id="wk_type_leinwand" datatype="html">
+        <source>Leinwand</source>
+        <target>Kanvas</target>
+      </trans-unit>
+      <trans-unit id="acryl_customSizes" datatype="html">
+        <source>Andere Größen sind jederzeit möglich und können individuell angefertigt werden.</source>
+        <target>Diğer boyutlar her zaman mümkündür ve bireysel olarak sipariş edilebilir.</target>
+      </trans-unit>
+      <trans-unit id="zubehor_edelstahl" datatype="html">
+        <source>Edelstahl-Abstandshalter</source>
+        <target>Paslanmaz Çelik Tutucu</target>
+      </trans-unit>
+      <trans-unit id="zubehor_hook" datatype="html">
+        <source>Metallhaken</source>
+        <target>Metal Kanca</target>
+      </trans-unit>
+      <trans-unit id="series_lastSupper" datatype="html">
+        <source>LETZTE ABENDMAHL</source>
+        <target>SON AKŞAM YEMEĞİ</target>
+      </trans-unit>
+      <trans-unit id="acryl_christRound_fullname" datatype="html">
+        <source>CHRISTUS – RUND</source>
+        <target>İSA – YUVARLAK</target>
       </trans-unit>
     </body>
   </file>

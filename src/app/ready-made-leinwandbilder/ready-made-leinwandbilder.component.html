@@ -1,0 +1,185 @@
+<!-- ─── Header ─── -->
+<app-shared-header [navLinks]="headerNav"></app-shared-header>
+
+<!-- ─── Page ─── -->
+<div class="ac-page">
+  <div class="ac-container">
+
+    <!-- Title -->
+    <div class="ac-title-block">
+      <h1 i18n="@@leinwand_pageTitle">READY-MADE LEINWANDBILDER</h1>
+      <p class="ac-subtitle" i18n="@@leinwand_subtitle">
+        Zeitlose Motive, hochwertig auf Leinwand gedruckt. Wählen Sie Ihr bevorzugtes Design
+        und Format – fertig zum Aufhängen, gemacht, um stilvoll hervorzustechen.
+      </p>
+    </div>
+
+    <!-- ─── Design carousel ─── -->
+    <div class="ac-section">
+      <h2 class="ac-section-title" i18n="@@leinwand_chooseDesign">WÄHLEN SIE IHR DESIGN</h2>
+
+      <!-- Sliding track -->
+      <div class="ac-carousel-wrapper">
+        <button class="ac-carousel-arrow" (click)="scrollDesigns(-1)" aria-label="Previous">&#8592;</button>
+        <div class="ac-carousel-viewport"
+          (touchstart)="touchStartX = $event.changedTouches[0].clientX"
+          (touchend)="$event.changedTouches[0].clientX - touchStartX < -40 ? scrollDesigns(1) : ($event.changedTouches[0].clientX - touchStartX > 40 ? scrollDesigns(-1) : null)">
+          <div class="ac-carousel-track" [class.no-transition]="noTransition" [style.transform]="'translateX(-' + carouselOffset + 'px)'">
+            <div
+              *ngFor="let d of loopedDesigns"
+              class="ac-design-thumb"
+              [class.active]="selectedDesign?.id === d.id"
+              (click)="selectDesign(d)"
+            >
+              <img [src]="d.thumb" [alt]="d.name">
+              <span>{{ d.name }}</span>
+            </div>
+          </div>
+        </div>
+        <button class="ac-carousel-arrow" (click)="scrollDesigns(1)" aria-label="Next">&#8594;</button>
+      </div>
+
+      <!-- Dot indicators -->
+      <div class="ac-carousel-dots">
+        <button
+          *ngFor="let d of designs"
+          class="ac-dot"
+          [class.active]="selectedDesign?.id === d.id"
+          (click)="selectDesign(d)"
+        ></button>
+      </div>
+    </div>
+
+    <!-- ─── Selected design display ─── -->
+    <div class="ac-product-display" *ngIf="selectedDesign">
+      <h3 class="ac-design-name">{{ selectedDesign.fullName }}</h3>
+      <div class="ac-images-row">
+        <div class="ac-main-img-wrap">
+          <img [src]="selectedDesign.full" [alt]="selectedDesign.name" class="ac-main-img">
+        </div>
+        <span class="ac-arrow">&#8250;</span>
+        <div class="ac-wall-img-wrap">
+          <img [src]="selectedDesign.wall" alt="Wall preview" class="ac-wall-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Config ─── -->
+    <div class="ac-config" *ngIf="selectedDesign">
+      <h3 class="ac-config-title" i18n="@@leinwand_configTitle">PRODUKT KONFIGURIEREN</h3>
+
+      <div class="ac-config-grid">
+        <!-- Left column: Zubehör + Rahmenstärke + Menge -->
+        <div class="ac-config-column">
+
+          <!-- Zubehör -->
+          <div class="ac-config-group">
+            <label class="ac-config-label" i18n="@@leinwand_zubehorLabel">ZUBEHÖR HINZUFÜGEN</label>
+            <div class="ac-option-buttons">
+              <button class="ac-option-btn" [class.active]="selectedZubehor === 'none'" (click)="selectedZubehor = 'none'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <circle cx="16" cy="16" r="12" stroke="#666" stroke-width="2"/>
+                  <line x1="7" y1="25" x2="25" y2="7" stroke="#666" stroke-width="2"/>
+                </svg>
+                <span class="ac-option-label">None</span>
+              </button>
+              <button class="ac-option-btn" [class.active]="selectedZubehor === 'hook'" (click)="selectedZubehor = 'hook'">
+                <img src="assets/images/leinwand-metal-hook.png" alt="Metallhaken" class="ac-option-img">
+                <span class="ac-option-label">Metallhaken</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Rahmenstärke -->
+          <div class="ac-config-group">
+            <label class="ac-config-label" i18n="@@leinwand_rahmenLabel">RAHMENSTÄRKE AUSWÄHLEN</label>
+            <div class="ac-option-buttons">
+              <button
+                *ngFor="let r of rahmenOptions"
+                class="ac-option-btn lw-rahmen-btn"
+                [class.active]="selectedRahmen === r.id"
+                (click)="selectedRahmen = r.id"
+              >
+                <img [src]="r.img" [alt]="r.label" class="lw-rahmen-img">
+                <span class="ac-option-label">{{ r.label }}</span>
+              </button>
+            </div>
+            <p class="lw-canvas-info">• CANVAS 350 GSM</p>
+          </div>
+
+          <!-- Menge -->
+          <div class="ac-config-group ac-stack-tight">
+            <label class="ac-config-label" i18n="@@leinwand_mengeLabel">MENGE FESTLEGEN</label>
+            <div class="ac-stepper">
+              <button class="ac-stepper-btn" (click)="decrement()">&#8722;</button>
+              <span class="ac-stepper-val">{{ menge }}</span>
+              <button class="ac-stepper-btn" (click)="increment()">&#43;</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right column: Format -->
+        <div class="ac-config-column">
+          <div class="ac-config-group">
+            <label class="ac-config-label" i18n="@@leinwand_formatLabel">FORMAT AUSWÄHLEN</label>
+            <div class="ac-format-options">
+              <label *ngFor="let f of formatOptions" class="ac-format-row">
+                <input type="radio" [(ngModel)]="selectedFormat" [value]="f.id" name="format">
+                <span class="ac-format-size">{{ f.label }}</span>
+                <span class="ac-format-dash">—</span>
+                <span class="ac-format-price">{{ f.price }}</span>
+                <span class="ac-format-note" *ngIf="f.note">{{ f.note }}</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order -->
+      <button class="ac-order-btn" (click)="onOrder()" i18n="@@leinwand_order">IN DEN WARENKORB</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── Footer ─── -->
+<footer class="ac-footer">
+  <div class="ac-footer-content">
+    <div class="ac-footer-logo">
+      <img src="assets/images/magicframe.png" alt="Magical Frames Logo">
+      <p class="ac-footer-tagline" i18n="@@footerTagline">Momente, die wir für Sie drucken.</p>
+    </div>
+    <div class="ac-footer-links">
+      <div>
+        <h4 i18n="@@footerServices">Leistungen</h4>
+        <ul>
+          <li i18n="@@footerCanvas">Leinwanddruck &amp; Rahmung</li>
+          <li i18n="@@footerVinyl">Vinylaufkleber</li>
+          <li i18n="@@footerAcrylic">Acrylic Glas Druck</li>
+          <li i18n="@@footerComplete">Komplette Druckservices</li>
+          <li i18n="@@footerCar">Autoaufkleber</li>
+          <li i18n="@@footerDesign">Druckdesign</li>
+        </ul>
+      </div>
+      <div>
+        <h4 i18n="@@footerStudio">Studio</h4>
+        <ul>
+          <li i18n="@@footerPhotography">Fotografie</li>
+          <li i18n="@@footerPortraits">Portraits</li>
+          <li i18n="@@footerProducts">Produkte</li>
+          <li i18n="@@footerBranding">Markenaufnahmen</li>
+        </ul>
+      </div>
+      <div>
+        <h4 i18n="@@footerContact">Kontakt</h4>
+        <ul>
+          <li i18n="@@footerAddress">Adresse: Burgdorf, Deutschland</li>
+          <li i18n="@@footerPhone">Telefon: +49 123 456789</li>
+          <li i18n="@@footerEmail">E-Mail: info&#64;magicalframes.de</li>
+          <li i18n="@@footerSocial">Social Media</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

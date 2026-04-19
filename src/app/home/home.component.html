@@ -4,18 +4,25 @@
     <div class="header-content">
       <img src="assets/images/magicframe.png" alt="Magical Frames Logo" class="logo">
       <input type="text" class="search-bar" placeholder="suchen" i18n-placeholder="@@searchPlaceholder">
-      <nav>
-        <a (click)="scrollTo('services')" i18n="@@servicesLink">Leistungen</a>
-        <a (click)="scrollTo('about')" i18n="@@aboutUsLink">Über uns</a>
-        <a (click)="scrollTo('contact')" i18n="@@contactLink">Kontakt</a>
+      <button class="hamburger-btn" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav [class.mobile-open]="isMobileMenuOpen">
+        <a (click)="scrollTo('services'); isMobileMenuOpen = false" i18n="@@servicesLink">Leistungen</a>
+        <a (click)="scrollTo('about'); isMobileMenuOpen = false" i18n="@@aboutUsLink">Über uns</a>
+        <a (click)="scrollTo('contact'); isMobileMenuOpen = false" i18n="@@contactLink">Kontakt</a>
         <div class="lang-dropdown">
           <button (click)="toggleLangDropdown()" class="lang-dropbtn">
             {{ currentLang }} <span class="arrow">&#9662;</span>
           </button>
           <div *ngIf="isLangDropdownOpen" class="lang-dropdown-content">
-            <a *ngFor="let lang of languages" [href]="'/' + lang.code + '/'">{{ lang.name }}</a>
+            <a *ngFor="let lang of languages" (click)="switchLang(lang.code)">{{ lang.name }}</a>
           </div>
         </div>
+        <a [routerLink]="['/warenkorb']" class="cart-icon-link" (click)="isMobileMenuOpen = false" aria-label="Warenkorb">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-badge" *ngIf="(cartService.cartCount$ | async) as count">{{ count }}</span>
+        </a>
       </nav>
     </div>
   </header>
@@ -23,69 +30,59 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 i18n="@@heroTitle">IHRE VISION,<br>PERFEKT GEDRUCKT</h1>
-      <p i18n="@@heroSubtitle">Premium-Druck und professionelle Fotografie in Burgdorf, Deutschland. Hochwertige Ergebnisse für Künstler, Unternehmen und private Kunden.</p>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1 i18n="@@heroTitle">IHRE VISION,<br>PERFEKT<br>GEDRUCKT</h1>
+        <p i18n="@@heroSubtitle">Premium-Druck und professionelle Fotografie in Burgdorf, Deutschland. Hochwertige Ergebnisse für Künstler, Unternehmen und private Kunden.</p>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section class="about-section" id="about">
-    <h2 i18n="@@aboutTitle">WER WIR SIND ?</h2>
-    <p i18n="@@aboutText">Wir sind ein Studio, das Bilder und besondere Momente in hochwertige, greifbare Werke verwandelt. Unser Angebot umfasst individuelle Drucke wie Acryl-, Leinwand- und Fine-Art-Druck sowie Fotografie für Portraits, Produkte und Markenaufnahmen. Zusätzlich erstellen wir Werbetechnik, Serienkarten und Wandaufkleber – alles aus einer Hand, mit überzeugender Qualität und zuverlässig, aus echter Handwerk.</p>
+    <h2 i18n="@@aboutTitle">Wer wir sind ?</h2>
+    <p i18n="@@aboutText">Wir sind ein Studio, das Bilder und besondere Momente in hochwertige, greifbare Werke verwandelt. Unser Angebot umfasst individuelle Drucke wie Acryl-, Leinwand- und Fine-Art-Drucke sowie Fotografie für Porträts, Produkte und Markenaufnahmen. Zusätzlich erstellen wir Visitenkarten, Speisekarten und Wandaufkleber – alles aus einer Hand, mit überzeugender Qualität und zuverlässigem Handwerk.</p>
   </section>
 
   <!-- Services Section -->
   <section class="services-section" id="services">
     <h2 i18n="@@servicesTitle">WAS WIR ANBIETEN</h2>
+    <div class="services-arrows-row">
+      <button class="arrow-btn" (click)="scrollServices('left')">&#8592;</button>
+      <button class="arrow-btn" (click)="scrollServices('right')">&#8594;</button>
+    </div>
     <div class="services-scroll-container" #servicesScroll>
       <div class="services-list">
         <div class="service-item">
-          <div class="service-img-container">
-            <img src="assets/images/service1.png" alt="LEINWANDDRUCK & RAHMUNG">
-            <div class="service-overlay">
-              <span i18n="@@serviceCanvas">LEINWANDDRUCK & RAHMUNG</span>
-            </div>
-          </div>
+          <img src="assets/images/service1.png" alt="LEINWANDDRUCK & RAHMUNG">
+          <span i18n="@@serviceCanvas">LEINWANDDRUCK & RAHMUNG</span>
         </div>
         <div class="service-item" routerLink="/vinyl-sticker">
-          <div class="service-img-container">
-            <img src="assets/images/service2.png" alt="VINYLAUFKLEBER">
-            <div class="service-overlay">
-              <span i18n="@@serviceVinyl">VINYLAUFKLEBER</span>
-            </div>
-          </div>
+          <img src="assets/images/service2.png" alt="VINYLAUFKLEBER">
+          <span i18n="@@serviceVinyl">VINYLAUFKLEBER</span>
         </div>
         <div class="service-item">
-          <div class="service-img-container">
-            <img src="assets/images/service3.png" alt="ACRYLIC GLAS DRUCK">
-            <div class="service-overlay">
-              <span i18n="@@serviceAcrylic">ACRYLIC GLAS DRUCK</span>
-            </div>
-          </div>
+          <img src="assets/images/service3.png" alt="ACRYLIC GLAS DRUCK">
+          <span i18n="@@serviceAcrylic">ACRYLIC GLAS DRUCK</span>
         </div>
         <div class="service-item">
-          <div class="service-img-container">
-            <img src="assets/images/service4.png" alt="KOMPLETTE DRUCKSERVICES">
-            <div class="service-overlay">
-              <span i18n="@@serviceComplete">KOMPLETTE DRUCKSERVICES</span>
-            </div>
-          </div>
+          <img src="assets/images/service4.png" alt="KOMPLETTE DRUCKSERVICES">
+          <span i18n="@@serviceComplete">KOMPLETTE DRUCKSERVICES</span>
         </div>
         <div class="service-item">
-          <div class="service-img-container">
-            <img src="assets/images/service5.png" alt="AUTOAUFKLEBER">
-            <div class="service-overlay">
-              <span i18n="@@serviceCar">AUTOAUFKLEBER</span>
-            </div>
-          </div>
+          <img src="assets/images/service5.png" alt="AUTOAUFKLEBER">
+          <span i18n="@@serviceCar">AUTOAUFKLEBER</span>
         </div>
         <div class="service-item">
-          <div class="service-img-container">
-            <img src="assets/images/service6.png" alt="DRUCKDESIGN">
-            <div class="service-overlay">
-              <span i18n="@@serviceDesign">DRUCKDESIGN</span>
-            </div>
+          <img src="assets/images/service6.png" alt="DRUCKDESIGN">
+          <span i18n="@@serviceDesign">DRUCKDESIGN</span>
+        </div>
+        <div class="service-item limitierte-item" (click)="toggleLimitierteMenu(); $event.stopPropagation()">
+          <img src="assets/images/limitierte-prints.jpg" alt="LIMITIERTE PRINTS">
+          <span i18n="@@featuredLimited">LIMITIERTE PRINTS</span>
+          <div class="limitierte-dropdown" *ngIf="isLimitierteOpen" (click)="$event.stopPropagation()">
+            <a routerLink="/ready-made-leinwandbilder" class="dropdown-option" (click)="isLimitierteOpen=false" i18n="@@featuredNavLeinwand">Leinwandbilder</a>
+            <a routerLink="/ready-made-acrylglasbilder" class="dropdown-option" (click)="isLimitierteOpen=false" i18n="@@featuredNavAcryl">Acrylglasbilder</a>
           </div>
         </div>
       </div>
@@ -98,16 +95,37 @@
       <h2 i18n="@@contactTitle">WIR SIND IMMER BEREIT, IHNEN ZU HELFEN UND IHRE FRAGEN ZU BEANTWORTEN.</h2>
     </div>
     <div class="contact-right">
-      <form class="contact-form">
-        <label for="name" i18n="@@formName">Vollständiger Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email" i18n="@@formEmail">E-Mail</label>
-        <input type="email" id="email" name="email" required>
-        <label for="subject" i18n="@@formSubject">Betreff</label>
-        <input type="text" id="subject" name="subject">
-        <label for="message" i18n="@@formMessage">Nachricht</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit" i18n="@@formSubmit">Nachricht senden</button>
+      <h3 class="contact-form-title" i18n="@@getInTouch">GET IN TOUCH</h3>
+      <form class="contact-form" (ngSubmit)="submitContact()" #contactForm="ngForm">
+        <div class="cf-field">
+          <input type="text" id="name" name="name"
+            [(ngModel)]="contactName"
+            (blur)="validateContactName()"
+            [class.cf-input-error]="contactNameError"
+            i18n-placeholder="@@formName" placeholder="VOLLSTÄNDIGER NAME" required>
+          <span class="cf-error-msg" *ngIf="contactNameError" i18n="@@formNameError">Bitte geben Sie Ihren Namen ein.</span>
+        </div>
+        <div class="cf-field">
+          <input type="email" id="email" name="email"
+            [(ngModel)]="contactEmail"
+            (blur)="validateContactEmail()"
+            (input)="validateContactEmail()"
+            [class.cf-input-error]="contactEmailError"
+            i18n-placeholder="@@formEmail" placeholder="E-MAIL" required>
+          <span class="cf-error-msg" *ngIf="contactEmailError" i18n="@@formEmailError">Bitte geben Sie eine gültige E-Mail-Adresse ein.</span>
+        </div>
+        <input type="text" id="subject" name="subject" [(ngModel)]="contactSubject" i18n-placeholder="@@formSubject" placeholder="BETREFF">
+        <div class="cf-field">
+          <textarea id="message" name="message" rows="5"
+            [(ngModel)]="contactMessage"
+            (blur)="validateContactMessage()"
+            [class.cf-input-error]="contactMessageError"
+            i18n-placeholder="@@formMessage" placeholder="NACHRICHT" required></textarea>
+          <span class="cf-error-msg" *ngIf="contactMessageError" i18n="@@formMessageError">Bitte geben Sie eine Nachricht ein.</span>
+        </div>
+        <p *ngIf="contactSubmitted" class="cf-success-msg" i18n="@@formSuccess">Vielen Dank! Ihre Nachricht wurde gesendet.</p>
+        <p *ngIf="contactSendError" class="cf-error-msg" i18n="@@formSendError">Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.</p>
+        <button type="submit" [disabled]="contactSubmitting || contactSubmitted" i18n="@@formSubmit">Nachricht senden</button>
       </form>
     </div>
   </section>
@@ -117,6 +135,7 @@
     <div class="footer-content">
       <div class="footer-logo">
         <img src="assets/images/magicframe.png" alt="Magical Frames Logo">
+        <p class="footer-tagline" i18n="@@footerTagline">Momente, die wir für Sie drucken.</p>
       </div>
       <div class="footer-links">
         <div>

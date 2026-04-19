@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 /* Global reset to remove default browser margins */
 body, html {
@@ -9,3 +9,19 @@ body, html {
 }
 
 /* You can add global styles to this file, and also import other style files */
+
+/* ─── Global responsive baseline ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal overflow on any page */
+body, html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}

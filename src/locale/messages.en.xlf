@@ -170,6 +170,34 @@
           <context context-type="linenumber">102,104</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="formEmailError" datatype="html">
+        <source>Bitte geben Sie eine gültige E-Mail-Adresse ein.</source>
+        <target>Please enter a valid email address.</target>
+      </trans-unit>
+      <trans-unit id="formNameError" datatype="html">
+        <source>Bitte geben Sie Ihren Namen ein.</source>
+        <target>Please enter your name.</target>
+      </trans-unit>
+      <trans-unit id="formMessageError" datatype="html">
+        <source>Bitte geben Sie eine Nachricht ein.</source>
+        <target>Please enter a message.</target>
+      </trans-unit>
+      <trans-unit id="formSendError" datatype="html">
+        <source>Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.</source>
+        <target>An error occurred. Please try again later.</target>
+      </trans-unit>
+      <trans-unit id="formSuccess" datatype="html">
+        <source>Vielen Dank! Ihre Nachricht wurde gesendet.</source>
+        <target>Thank you! Your message has been sent.</target>
+      </trans-unit>
+      <trans-unit id="wk_error_email_required" datatype="html">
+        <source>Bitte geben Sie Ihre E-Mail-Adresse ein.</source>
+        <target>Please enter your email address.</target>
+      </trans-unit>
+      <trans-unit id="wk_error_email_invalid" datatype="html">
+        <source>Bitte geben Sie eine gültige E-Mail-Adresse ein.</source>
+        <target>Please enter a valid email address.</target>
+      </trans-unit>
       <trans-unit id="footerServices" datatype="html">
         <source>Leistungen</source>
         <target>Services</target>
@@ -305,6 +333,258 @@
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">140,142</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="getInTouch" datatype="html">
+        <source>GET IN TOUCH</source>
+        <target>GET IN TOUCH</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="footerTagline" datatype="html">
+        <source>Momente, die wir für Sie drucken.</source>
+        <target>Moments we print for you.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="featuredLimited" datatype="html">
+        <source>LIMITIERTE PRINTS</source>
+        <target>LIMITED PRINTS</target>
+      </trans-unit>
+      <trans-unit id="featuredAcrylic" datatype="html">
+        <source>Acrylic Glass druck</source>
+        <target>Acrylic Glass Print</target>
+      </trans-unit>
+      <trans-unit id="featuredNavLeinwand" datatype="html">
+        <source>🖼️ Ready-Made Leinwandbilder</source>
+        <target>Canvas Prints</target>
+      </trans-unit>
+      <trans-unit id="featuredNavAcryl" datatype="html">
+        <source>✨ Ready-Made Acrylglasbilder</source>
+        <target>Acrylic Glass Prints</target>
+      </trans-unit>
+      <trans-unit id="leinwand_back" datatype="html">
+        <source>Zurück</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="leinwand_pageTitle" datatype="html">
+        <source>READY-MADE LEINWANDBILDER</source>
+        <target>READY-MADE CANVAS PRINTS</target>
+      </trans-unit>
+      <trans-unit id="leinwand_subtitle" datatype="html">
+        <source>Zeitlose Motive, hochwertig auf Leinwand gedruckt. Wählen Sie Ihr bevorzugtes Design und Format – fertig zum Aufhängen, gemacht, um stilvoll hervorzustechen.</source>
+        <target>Timeless motifs, high-quality printed on canvas. Choose your preferred design and format – ready to hang, made to stand out stylishly.</target>
+      </trans-unit>
+      <trans-unit id="leinwand_chooseDesign" datatype="html">
+        <source>WÄHLEN SIE IHR DESIGN</source>
+        <target>CHOOSE YOUR DESIGN</target>
+      </trans-unit>
+      <trans-unit id="leinwand_configTitle" datatype="html">
+        <source>PRODUKT KONFIGURIEREN</source>
+        <target>CONFIGURE PRODUCT</target>
+      </trans-unit>
+      <trans-unit id="leinwand_zubehorLabel" datatype="html">
+        <source>ZUBEHÖR HINZUFÜGEN</source>
+        <target>ADD ACCESSORIES</target>
+      </trans-unit>
+      <trans-unit id="leinwand_formatLabel" datatype="html">
+        <source>FORMAT AUSWÄHLEN</source>
+        <target>SELECT FORMAT</target>
+      </trans-unit>
+      <trans-unit id="leinwand_rahmenLabel" datatype="html">
+        <source>RAHMENSTÄRKE AUSWÄHLEN</source>
+        <target>SELECT FRAME THICKNESS</target>
+      </trans-unit>
+      <trans-unit id="leinwand_mengeLabel" datatype="html">
+        <source>MENGE FESTLEGEN</source>
+        <target>SET QUANTITY</target>
+      </trans-unit>
+      <trans-unit id="leinwand_wallView" datatype="html">
+        <source>Wandansicht</source>
+        <target>Wall Preview</target>
+      </trans-unit>
+      <trans-unit id="leinwand_zubehor" datatype="html">
+        <source>Zubehör</source>
+        <target>Accessories</target>
+      </trans-unit>
+      <trans-unit id="leinwand_rahmen" datatype="html">
+        <source>Rahmenstärke</source>
+        <target>Frame Thickness</target>
+      </trans-unit>
+      <trans-unit id="leinwand_format" datatype="html">
+        <source>Format</source>
+        <target>Format</target>
+      </trans-unit>
+      <trans-unit id="leinwand_menge" datatype="html">
+        <source>Menge</source>
+        <target>Quantity</target>
+      </trans-unit>
+      <trans-unit id="leinwand_order" datatype="html">
+        <source>IN DEN WARENKORB</source>
+        <target>ADD TO CART</target>
+      </trans-unit>
+      <trans-unit id="acryl_back" datatype="html">
+        <source>Zurück</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="acryl_pageTitle" datatype="html">
+        <source>READY-MADE ACRYLGLASBILDER</source>
+        <target>READY-MADE ACRYLIC GLASS PRINTS</target>
+      </trans-unit>
+      <trans-unit id="acryl_wallView" datatype="html">
+        <source>Wandansicht</source>
+        <target>Wall Preview</target>
+      </trans-unit>
+      <trans-unit id="acryl_zubehor" datatype="html">
+        <source>Zubehör</source>
+        <target>Accessories</target>
+      </trans-unit>
+      <trans-unit id="acryl_format" datatype="html">
+        <source>Format</source>
+        <target>Format</target>
+      </trans-unit>
+      <trans-unit id="acryl_menge" datatype="html">
+        <source>Menge</source>
+        <target>Quantity</target>
+      </trans-unit>
+      <trans-unit id="acryl_order" datatype="html">
+        <source>IN DEN WARENKORB</source>
+        <target>ADD TO CART</target>
+      </trans-unit>
+      <trans-unit id="acryl_subtitle" datatype="html">
+        <source>Zeitlose Motive, gefertigt auf hochwertigem Acrylglas. Wählen Sie Ihr bevorzugtes Design und Format – fertig zum Aufhängen, gemacht, um stilvoll hervorzustechen.</source>
+        <target>Timeless motifs, crafted on high-quality acrylic glass. Choose your preferred design and format – ready to hang, made to stand out stylishly.</target>
+      </trans-unit>
+      <trans-unit id="acryl_designTitle" datatype="html">
+        <source>WÄHLEN SIE IHR DESIGN</source>
+        <target>CHOOSE YOUR DESIGN</target>
+      </trans-unit>
+      <trans-unit id="acryl_configTitle" datatype="html">
+        <source>PRODUKT KONFIGURIEREN</source>
+        <target>CONFIGURE PRODUCT</target>
+      </trans-unit>
+      <trans-unit id="acryl_zubehorLabel" datatype="html">
+        <source>ZUBEHÖR HINZUFÜGEN</source>
+        <target>ADD ACCESSORIES</target>
+      </trans-unit>
+      <trans-unit id="acryl_none" datatype="html">
+        <source>None</source>
+        <target>None</target>
+      </trans-unit>
+      <trans-unit id="acryl_staerkeLabel" datatype="html">
+        <source>ACRYLGLASSTÄRKE</source>
+        <target>ACRYLIC THICKNESS</target>
+      </trans-unit>
+      <trans-unit id="acryl_mengeLabel" datatype="html">
+        <source>MENGE FESTLEGEN</source>
+        <target>SET QUANTITY</target>
+      </trans-unit>
+      <trans-unit id="acryl_formatLabel" datatype="html">
+        <source>FORMAT AUSWÄHLEN</source>
+        <target>SELECT FORMAT</target>
+      </trans-unit>
+      <trans-unit id="wk_title" datatype="html">
+        <source>Warenkorb</source>
+        <target>Shopping Cart</target>
+      </trans-unit>
+      <trans-unit id="wk_subtitle" datatype="html">
+        <source>Ihre ausgewählten Artikel</source>
+        <target>Your selected items</target>
+      </trans-unit>
+      <trans-unit id="wk_success_heading" datatype="html">
+        <source>Bestellung erfolgreich!</source>
+        <target>Order successful!</target>
+      </trans-unit>
+      <trans-unit id="wk_success_ordernr" datatype="html">
+        <source>Ihre Bestellnummer:</source>
+        <target>Your order number:</target>
+      </trans-unit>
+      <trans-unit id="wk_success_email" datatype="html">
+        <source>Sie erhalten eine Bestätigung per E-Mail.</source>
+        <target>You will receive a confirmation by email.</target>
+      </trans-unit>
+      <trans-unit id="wk_back" datatype="html">
+        <source>Zurück zur Startseite</source>
+        <target>Back to Home</target>
+      </trans-unit>
+      <trans-unit id="wk_empty" datatype="html">
+        <source>Ihr Warenkorb ist leer.</source>
+        <target>Your cart is empty.</target>
+      </trans-unit>
+      <trans-unit id="wk_format" datatype="html">
+        <source>Format:</source>
+        <target>Format:</target>
+      </trans-unit>
+      <trans-unit id="wk_rahmen" datatype="html">
+        <source>Rahmen:</source>
+        <target>Frame:</target>
+      </trans-unit>
+      <trans-unit id="wk_zubehor" datatype="html">
+        <source>Zubehör:</source>
+        <target>Accessories:</target>
+      </trans-unit>
+      <trans-unit id="wk_menge" datatype="html">
+        <source>Menge:</source>
+        <target>Quantity:</target>
+      </trans-unit>
+      <trans-unit id="wk_subtotal" datatype="html">
+        <source>Zwischensumme</source>
+        <target>Subtotal</target>
+      </trans-unit>
+      <trans-unit id="wk_tax" datatype="html">
+        <source>+ zzgl. 19 % MwSt. und Versand</source>
+        <target>+ excl. 19% VAT and shipping</target>
+      </trans-unit>
+      <trans-unit id="wk_email_label" datatype="html">
+        <source>E-Mail-Adresse *</source>
+        <target>Email address *</target>
+      </trans-unit>
+      <trans-unit id="wk_email_placeholder" datatype="html">
+        <source>ihre@email.de</source>
+        <target>your@email.com</target>
+      </trans-unit>
+      <trans-unit id="wk_order_btn" datatype="html">
+        <source>JETZT BESTELLEN</source>
+        <target>PLACE ORDER</target>
+      </trans-unit>
+      <trans-unit id="wk_loading" datatype="html">
+        <source>Wird gesendet…</source>
+        <target>Sending…</target>
+      </trans-unit>
+      <trans-unit id="wk_remove_aria" datatype="html">
+        <source>Entfernen</source>
+        <target>Remove</target>
+      </trans-unit>
+      <trans-unit id="wk_type_acryl" datatype="html">
+        <source>Acrylglas</source>
+        <target>Acrylic Glass</target>
+      </trans-unit>
+      <trans-unit id="wk_type_leinwand" datatype="html">
+        <source>Leinwand</source>
+        <target>Canvas</target>
+      </trans-unit>
+      <trans-unit id="acryl_customSizes" datatype="html">
+        <source>Andere Größen sind jederzeit möglich und können individuell angefertigt werden.</source>
+        <target>Other sizes are available at any time and can be custom made.</target>
+      </trans-unit>
+      <trans-unit id="zubehor_edelstahl" datatype="html">
+        <source>Edelstahl-Abstandshalter</source>
+        <target>Stainless Steel Standoffs</target>
+      </trans-unit>
+      <trans-unit id="zubehor_hook" datatype="html">
+        <source>Metallhaken</source>
+        <target>Metal Hook</target>
+      </trans-unit>
+      <trans-unit id="series_lastSupper" datatype="html">
+        <source>LETZTE ABENDMAHL</source>
+        <target>THE LAST SUPPER</target>
+      </trans-unit>
+      <trans-unit id="acryl_christRound_fullname" datatype="html">
+        <source>CHRISTUS – RUND</source>
+        <target>CHRIST – ROUND</target>
       </trans-unit>
     </body>
   </file>

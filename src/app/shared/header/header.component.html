@@ -1,0 +1,38 @@
+<header class="header">
+  <div class="header-content">
+    <a routerLink="/" class="logo-link">
+      <img src="assets/images/magicframe.png" alt="Magical Frames" class="logo">
+    </a>
+    <input type="text" class="search-bar" placeholder="suchen">
+    <button
+      class="hamburger-btn"
+      (click)="toggleMobileMenu()"
+      [class.active]="isMobileMenuOpen"
+      aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav [class.mobile-open]="isMobileMenuOpen">
+      <ng-container *ngFor="let link of navLinks">
+        <a *ngIf="link.route && link.fragment"
+           (click)="goToAnchor(link.route, link.fragment)">{{ link.label }}</a>
+        <a *ngIf="link.route && !link.fragment"
+           [routerLink]="link.route"
+           (click)="isMobileMenuOpen = false">{{ link.label }}</a>
+        <a *ngIf="!link.route"
+           (click)="isMobileMenuOpen = false">{{ link.label }}</a>
+      </ng-container>
+      <div class="lang-dropdown">
+        <button (click)="toggleLangDropdown()" class="lang-dropbtn">
+          {{ currentLang }} <span class="arrow">&#9662;</span>
+        </button>
+        <div *ngIf="isLangDropdownOpen" class="lang-dropdown-content">
+          <a *ngFor="let lang of languages" (click)="switchLang(lang.code)">{{ lang.name }}</a>
+        </div>
+      </div>
+      <a routerLink="/warenkorb" class="cart-icon-link" (click)="isMobileMenuOpen = false" aria-label="Warenkorb">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-badge" *ngIf="(cartService.cartCount$ | async) as count">{{ count }}</span>
+      </a>
+    </nav>
+  </div>
+</header>
